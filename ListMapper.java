@@ -8,6 +8,10 @@ interface ListFilter<E> {
 	boolean FilterCallback(E element, int index, List<E> list);
 }
 
+interface ListReducer<E,K> {
+	K ReduceCallback(K pv,E element, int index, List<E> list);
+}
+
 
 
 class QubeFunc implements ListMapper<Integer> {
@@ -54,5 +58,11 @@ class IsEven implements ListFilter<Integer> {
 class LengthGreaterThanFive implements ListFilter<String> {
 	public boolean FilterCallback(String element,int index , List<String> list) {
 		return (element.length() > 5);
+	}
+}
+
+class AddNumber implements ListReducer<Integer,Integer> {
+	public Integer ReduceCallback(Integer pv,Integer element,int index,List<Integer> list) {
+		return pv+element;
 	}
 }

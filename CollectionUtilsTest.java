@@ -117,4 +117,19 @@ public class CollectionUtilsTest {
 		
 	}
 
+	@Test
+	public void reduce_returns_a_list_Of_all_Add_number_on_the_given_list(){
+		ListReducer listReducer = new AddNumber();
+		List<Integer> numbers = new ArrayList<Integer>();
+		Integer pv = new Integer(0);
+		Integer expected = new Integer(72);
+
+		numbers.add(2); numbers.add(7); numbers.add(14);
+		numbers.add(15); numbers.add(13); numbers.add(21);
+		
+		Integer result = CollectionUtils.<Integer,Integer>reduce(numbers,listReducer,pv);
+		assertEquals(result,expected);
+		
+	}
+
 }

@@ -23,5 +23,15 @@ public class CollectionUtils {
 		}
 		return result;
 	}
+
+	public static<E,K> K reduce(List<E> list, ListReducer<E,K> listReducer, K pv) {
+		int index = 0;
+		for(E element:list){
+			pv = listReducer.ReduceCallback(pv,element,index,list);
+			index++;
+		}
+		return pv;
+	}
+	
 }
 
