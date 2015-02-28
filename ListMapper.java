@@ -50,3 +50,9 @@ class IsEven implements ListFilter<Integer> {
 	}
 }
 
+
+class LengthGreaterThanFive implements ListFilter<String> {
+	public boolean FilterCallback(String element,int index , List<String> list) {
+		return (element.length() > 5);
+	}
+}

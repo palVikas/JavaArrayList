@@ -12,10 +12,10 @@ public class CollectionUtils {
 		return result;
 	}
 
-	public static<Integer> List<Integer> filter(List<Integer> list, ListFilter listFilter){
-		List<Integer> result = new ArrayList();
+	public static<E> List<E> filter(List<E> list, ListFilter listFilter){
+		List<E> result = new ArrayList();
 		int index = 0;
-		for(Integer element:list){
+		for(E element:list){
  			if(listFilter.FilterCallback(element,index,list)){
 	 			result.add(element);
 	 		}

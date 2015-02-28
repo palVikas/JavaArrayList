@@ -100,4 +100,21 @@ public class CollectionUtilsTest {
 		
 	}
 
+	@Test
+	public void filter_returns_a_list_of_String_whose_length_is_greater_than_five_after_performing_operation_on_the_given_list(){
+		ListFilter listFilter = new LengthGreaterThanFive();
+		List<String> string = new ArrayList<String>();
+		List<String> expected = new ArrayList<String>();
+
+		string.add("heloo"); string.add("nahi"); string.add("sahiba");
+		string.add("why"); string.add("yariya"); string.add("dostana");
+		expected.add("sahiba"); expected.add("yariya"); expected.add("dostana"); 
+		
+		List<String> result = CollectionUtils.filter(string,listFilter);
+		assertEquals(expected.get(0),result.get(0));
+		assertEquals(expected.get(1),result.get(1));
+		assertEquals(expected.get(2),result.get(2));
+		
+	}
+
 }
